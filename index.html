@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communication UI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>בחר קטגוריה</h1>
+        </header>
+        <main>
+            <div id="categories" class="panel"></div>
+            <div id="words" class="panel hidden"></div>
+            <div id="sentence-panel">
+                <h2>משפט נוכחי:</h2>
+                <div id="sentence"></div>
+                <div class="controls">
+                    <button id="delete-last">מחק מילה אחרונה</button>
+                    <button id="clear-all">נקה הכל</button>
+                    <button id="done">סיום</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

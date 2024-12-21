@@ -1,0 +1,58 @@
+
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    text-align: center;
+    padding: 20px;
+}
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+.panel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+}
+.panel.hidden {
+    display: none;
+}
+button, .flashcard {
+    background-color: white;
+    color: black;
+    border: none;
+    font-size: 1.5rem;
+    margin: 10px;
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    min-width: 120px;
+}
+button:hover, .flashcard:hover {
+    background-color: #ccc;
+}
+.flashcard.back-button {
+    background-color: lightblue;
+    font-weight: bold;
+}
+#sentence-panel {
+    margin-top: 30px;
+}
+#sentence {
+    font-size: 2rem;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    min-height: 50px;
+}
+.controls button {
+    margin: 10px;
+}
