@@ -1,14 +1,22 @@
-
 const categories = {
-    "צרכים בסיסיים": ["מים", "אוכל", "שתייה", "שירותים", "עזרה", "תרופה"],
-    "רגשות ותחושות": [
-        "שמח", "עצוב", "כועס", "עייף", "מפחד", "לחוץ",
-        "כעס עמוק", "שמחה עזה", "ייאוש", "אכזבה", "התרגשות", "אומץ"
+    "צפיפורים": [
+        { name: "עורב", link: "https://he.wikipedia.org/wiki/%D7%A2%D7%95%D7%A8%D7%91" },
+        { name: "נשר", link: "https://he.wikipedia.org/wiki/%D7%A0%D7%A9%D7%A8" },
+        { name: "יונה", link: "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%A0%D7%94" }
     ],
-    "רפואה ובריאות": ["רופא", "אחות", "תרופה", "דקירה", "בדיקה", "חום"],
-    "משפחה וקשרים": ["אבא", "אמא", "בן", "בת", "חבר", "אישה"],
-    "כינויים": ["אני", "אתה", "את", "הוא", "היא", "אנחנו", "אתם", "אתן", "הם", "הן"],
-    "מילות חיבור": ["ו", "אבל", "כי", "או", "של", "לכן", "עם", "ללא", "כמו"]
+    "ים ומטקות": [
+        { name: "חוף מציצים", link: "https://he.wikipedia.org/wiki/%D7%97%D7%95%D7%A3_%D7%9E%D7%A6%D7%99%D7%A6%D7%99%D7%9D" },
+        { name: "חוף גורדון", link: "https://he.wikipedia.org/wiki/%D7%97%D7%95%D7%A3_%D7%92%D7%95%D7%A8%D7%93%D7%95%D7%9F" }
+    ],
+    "כדורסל NBA": {
+        "Golden State Warriors": {
+            logo: "https://upload.wikimedia.org/wikipedia/en/0/01/Golden_State_Warriors_logo.svg",
+            players: [
+                { name: "Steph Curry", link: "https://he.wikipedia.org/wiki/%D7%A1%D7%98%D7%A3_%D7%A7%D7%90%D7%A8%D7%99" }
+            ]
+        }
+    },
+    "קללות": ["\u05e9\u05d5\u05d1\u05d1", "\u05d7\u05d5\u05e6\u05e4\u05df", "\u05de\u05e9\u05d5\u05d2\u05e2"]
 };
 
 let selectedWords = [];
@@ -42,23 +50,32 @@ function showWords(category) {
     backBtn.onclick = showCategories;
     wordsDiv.appendChild(backBtn);
 
-    categories[category].forEach(word => {
-        const btn = document.createElement('button');
-        btn.classList.add('flashcard');
-        btn.textContent = word;
-        btn.onclick = () => addWord(word);
-        wordsDiv.appendChild(btn);
-    });
+    const items = categories[category];
+
+    if (Array.isArray(items)) {
+        items.forEach(word => {
+            const btn = document.createElement('button');
+            btn.classList.add('flashcard');
+            btn.textContent = word.name || word;
+            btn.onclick = () => addWord(word);
+            wordsDiv.appendChild(btn);
+        });
+    }
 }
 
 function addWord(word) {
-    selectedWords.push(word);
-    updateSentence();
-}
-
-function updateSentence() {
     const sentenceDiv = document.getElementById('sentence');
-    sentenceDiv.textContent = selectedWords.join(' ');
+    const span = document.createElement('span');
+    span.textContent = word.name || word;
+    if (word.link) {
+        const a = document.createElement('a');
+        a.href = word.link;
+        a.textContent = word.name;
+        a.target = "_blank";
+        span.appendChild(a);
+    }
+    sentenceDiv.appendChild(span);
+    selectedWords.push(word.name || word);
 }
 
 document.getElementById('delete-last').onclick = () => {
@@ -75,5 +92,9 @@ document.getElementById('done').onclick = () => {
     alert(`המשפט שנוצר: ${selectedWords.join(' ')}`);
 };
 
-// Initialize the interface
+function updateSentence() {
+    const sentenceDiv = document.getElementById('sentence');
+    sentenceDiv.textContent = selectedWords.join(' ');
+}
+
 showCategories();
