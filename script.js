@@ -23,28 +23,7 @@ const categories = {
         { name: "חוף הרצליה", link: "https://he.wikipedia.org/wiki/%D7%97%D7%95%D7%A3_%D7%94%D7%A8%D7%A6%D7%9C%D7%99%D7%94" },
         { name: "חוף אפולוניה", link: "https://he.wikipedia.org/wiki/%D7%90%D7%A4%D7%95%D7%9C%D7%95%D7%A0%D7%99%D7%94" }
     ],
-    "כדורסל NBA": {
-        "Golden State Warriors": {
-            logo: "https://upload.wikimedia.org/wikipedia/en/0/01/Golden_State_Warriors_logo.svg",
-            players: [
-                { name: "Steph Curry", link: "https://he.wikipedia.org/wiki/%D7%A1%D7%98%D7%A3_%D7%A7%D7%90%D7%A8%D7%99" },
-                { name: "Klay Thompson", link: "https://he.wikipedia.org/wiki/%D7%A7%D7%9C%D7%99_%D7%AA%D7%95%D7%9E%D7%A4%D7%A1%D7%95%D7%9F" },
-                { name: "Draymond Green", link: "https://he.wikipedia.org/wiki/%D7%93%D7%A8%D7%99%D7%99%D7%9E%D7%95%D7%A0%D7%93_%D7%92%D7%A8%D7%99%D7%9F" },
-                { name: "Andrew Wiggins", link: "https://he.wikipedia.org/wiki/%D7%90%D7%A0%D7%93%D7%A8%D7%95_%D7%95%D7%95%D7%99%D7%92%D7%99%D7%A0%D7%A1" },
-                { name: "Jordan Poole", link: "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%A8%D7%93%D7%9F_%D7%A4%D7%95%D7%9C" }
-            ]
-        },
-        "Los Angeles Lakers": {
-            logo: "https://upload.wikimedia.org/wikipedia/en/3/3c/Los_Angeles_Lakers_logo.svg",
-            players: [
-                { name: "LeBron James", link: "https://he.wikipedia.org/wiki/%D7%9C%D7%91%D7%A8%D7%95%D7%9F_%D7%92%27%D7%99%D7%99%D7%9E%D7%A1" },
-                { name: "Anthony Davis", link: "https://he.wikipedia.org/wiki/%D7%90%D7%A0%D7%AA%D7%95%D7%A0%D7%99_%D7%93%D7%99%D7%99%D7%95%D7%95%D7%99%D7%A1" },
-                { name: "Russell Westbrook", link: "https://he.wikipedia.org/wiki/%D7%A8%D7%90%D7%A1%D7%9C_%D7%95%D7%95%D7%A1%D7%98%D7%91%D7%A8%D7%95%D7%A7" },
-                { name: "Carmelo Anthony", link: "https://he.wikipedia.org/wiki/%D7%A7%D7%A8%D7%9E%D7%9C%D7%95_%D7%90%D7%A0%D7%AA%D7%95%D7%A0%D7%99" },
-                { name: "Dwight Howard", link: "https://he.wikipedia.org/wiki/%D7%93%D7%95%D7%95%D7%99%D7%99%D7%98_%D7%94%D7%90%D7%95%D7%95%D7%90%D7%A8%D7%93" }
-            ]
-        }
-    },
+     
     "קללות": ["שובב", "חוצפן", "משוגע", "טיפש", "בזבזן", "מרושע", "תחמן", "חלש", "חוצפני", "מפגר"],
     "רפואה": [
         { name: "רופא", link: "https://he.wikipedia.org/wiki/%D7%A8%D7%95%D7%A4%D7%90" },
